@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form action="">
+    
+    
+    <label for="textbox">메모</label>
+    <textarea name="memo" id="textbox" cols="30" rows="30">
+
+    </textarea>
+
+    <br>
+    <br>
+    <br>
+
+
+    <select name="select" id="select"> 
+        
+        <!-- size="5" multiple> -->
+
+        <!-- size 크기 늘리면 선택할 수 있는 박스가 길어짐 -->
+
+
+        
+        <option value="0">탕수육</option>
+        <option value="1">자장면</option>
+        <option value="2">짬뽕</option>
+        <option value="3" selected>밥</option>
+
+        <!-- cheked랑 비슷 -->
+
+        <!-- 서버에 보내는 값이니 숫자가 중복이 되면 안 된다 -->
+
+        <!-- 프론트 엔드, 백 엔드로 이중체크 해야 
+        악성유저의 악질 꼬장 예방 -->
+    
+        <!-- 개발자 모드를 자주 사용하게 됨 -->
+
+
+
+    </select>
+
+    <br>
+    <br>
+    <br>
+
+    
+    <label for="cook">요리</label>
+    <input type="text" id="cook" list="datalist">
+    <datalist name="datalist" id="datalist">
+        
+        <option value="0">밥</option>
+        <option value="1">돈가스</option>
+        <option value="2">물</option>
+
+    </datalist>
+
+    <!-- 데이터리스트를 잘 안 쓰는 이유는 브라우저마다 값이 달라짐
+    그리고 밸류 값이 같이 나오기 때문에 보안에 취약 -->
+
+
+    <br>
+    <br>
+    <br>
+
+    <button type="submit">submit</button>
+    <button type="reset">reset</button>
+    <button type="button">button</button>
+        
+        <!-- 버튼 태그를 화면 낭독기에서 버튼이라고 알려줌 -->
+
+        <!-- 버튼도 속성을 주면 인풋과 똑같이 사용 가능 -->
+
+        <!-- 자바스크립트로 효과를 줘야 버튼이 활용이 가능 -->
+</form>
+
+    
+
+</body>
+</html>

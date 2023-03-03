@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>회원가입을 환영합니다</h1>
+
+    <form action="">
+        <fieldset>
+    
+    <legend>
+    사용자 정보
+    </legend>
+
+<ul>
+    <li>
+        <label for="id" >아이디</label>
+        <input type="text" id="id" required autofocus placeholder="4자~ 10자 사이, 공백없이">
+    </li>
+
+    <!-- 정식 명칭은 레이벨 Label -->
+
+    <!-- required는 입력란에 텍스트가 입력이 되지 않으면 입력 요청
+    하는 속성이다  -->
+
+    <li>
+        <label for="email" >이메일</label>
+        <input type="email" id="email" required>
+    </li>
+
+    <li>
+        <label for="pw" >비밀번호</label>
+        <input type="password" placeholder="문자와 숫자, 특수 기호 포함">
+    </li>
+
+
+    <li>
+        <label for="pw" >비밀번호 확인</label>
+        <input type="password" reqiured>
+    </li>
+
+    <li>
+        <!-- <label for="select">가입 경로</label>  -->
+       
+        <span>가입 경로</span>
+        <select name="select" id="select">
+
+            <option value="0">블로그</option>
+            <option value="1">지인소개</option>
+            <option value="2">기타</option>
+
+        </select>
+
+    </li>
+
+    <li>
+    <label for="textbox">메모</label>
+    <textarea name="textbox" id="textbox" cols="50" rows="5" placeholder="남길 말씀이 있다면 여기에">
+        
+    </textarea>
+    </li>
+    
+
+</ul>
+
+
+
+
+    
+    <!-- 태그로 감싸줘서 마크를 해주는 게 좋다 -->
+
+    <!-- h1 제목 p 문단 div 그룹화 span 마크업 해주는 태그 -->
+
+        </fieldset>
+
+    
+
+
+    
+        <fieldset>
+
+           <legend>
+                
+                이벤트와 새로운 소식
+
+            </legend>
+
+            
+            <div>
+
+
+            <input type="radio" name="radio" id="mailing_a">
+            <label for="mailing_a" >메일 수신</label>
+            
+
+            <input type="radio" name="radio" id="mailing_s" checked>
+            <label for="mailing_s">메일 수신 안 함</label>
+            
+        <!-- 유저사용성을 위해 Label과 input은 세트 -->
+        
+            </div>
+
+            <!-- value는 가지고 있는 데이터를 전송해주는 값 -->
+            <!-- name은 type과 일치시켜줘야 한다 -->
+
+            <!-- 공통된 기능을 구분하기 위해 div 태그를 이용하여
+            그룹화를 시킨다 -->
+        
+            <!-- 작성하는 순서에 따라 위치가 바뀐다 -->
+                
+           
+        </fieldset>
+
+
+        <!-- <label for="join" ></label> -->
+        <input type="submit" value="가입하기" name="submit" id="submit">
+
+
+        <!-- <label for="cancel" ></label> -->
+        <input type="reset" value="취소" name="reset" id="reset">
+
+
+        <!-- 서브밋과 리셋은 굳이 네임을 작성하지 않아도 된다 -->
+
+        <!-- 데이터 전송을 할 때 네임과 아이디는 필요
+        값을 넘기는 것은 꼭 네임이랑 아이디 필요 -->
+
+        <!-- 서브밋과 리셋은 버튼만 있으면 되니까 레이벨은 굳이
+        필요가 없다 어차피 레이벨 태글를 설정해도 안 나온다 -->
+
+            <!-- 보통은 리셋 버튼을 따로 둠 취소로 설정 X  -->
+
+            <!-- <button>버튼 기입하기</button> -->
+
+            <!-- <input type="button" value="버튼 기입하기2"> -->
+
+            <!-- 버튼 태그를 입력하고 속성 값을 줘야 문제가
+            생기지 않는다 버튼 태그만 사용하면 문제가 생김 -->
+    
+   </form>
+
+
+    <!-- 버튼과 서브밋은 기능적으로는 똑같은데 
+    브라우저가 알아서 만들어서 판단하는데 구동 방식에 있어서
+    예기치 못한 상황이 발생한다-->
+    
+
+</body>
+</html>
