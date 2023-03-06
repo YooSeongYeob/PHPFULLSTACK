@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+
+
+
+
+
+
+
+
+
+
+
+        /* h1 {
+            color: red; 
+        }
+
+        h1 {
+            color: orange;
+        } */
+
+
+        /* 밑에 있는 스타일이 위에 있는 것을 덮어버린다
+        밑이 우선 순위가 높다 동일 스타일일 경우 */
+
+
+        /* !important; */
+
+
+        /* .h1-1 {
+            color: orange;
+        }
+
+
+        #h1-id {
+            color: black;
+        } */
+
+
+
+        .container_2 {
+            color: blue;
+        }
+
+        .h1_2 {
+            color: orange;
+        }
+        
+    </style>
+
+    <!-- 태그 명에 직접적으로 꾸며주는 스타일을 타입 스타일 -->
+
+    <!-- 우선 순위가 타입 스타일보다 클래스 스타일이 더 높음
+    그래서 오렌지 색으로 변경되는 것임 -->
+
+    <!-- 임포턴트와 인라인 스타일은 지양해야 한다.
+    나중에 꼬일 확률이 큼-->
+
+
+</head>
+<body>
+
+    <!-- 스타일 우선 순위 -->
+
+    <!-- <div class="container">
+
+        <h1 class="h1-1" id="h1-id">적용 순위</h1>
+
+    </div> -->
+
+    <!-- 스타일 상속 -->
+
+    <div class="container_2">
+        <h1 class="h1_2">스타일 상속</h1>
+    </div>
+
+
+
+</body>
+</html>
+
+<!-- style="color: pink 인라인 스타일 -->

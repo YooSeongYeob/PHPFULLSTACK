@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        html {
+            font-family: '굴림', '바탕';
+
+        }
+
+        .p1 {
+            font-size: medium;
+        }
+         /* 미디움은 기본적으로 설정되어 있는 값  */
+        .p2 {
+            font-size: xx-small;
+        }
+        
+        .p3 {
+            font-size: xx-large;
+        } 
+
+        .p1_px {
+            font-size: 20px;
+        }
+
+        .p2_em {
+            font-size: 2em;
+        }
+
+        .p3_rem {
+            font-size: 2rem;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        div {
+            font-size: 16px;
+        }
+
+
+        .p1_weight1 {
+            font-weight: 100; 
+        }
+
+        .p1_weight2 {
+            font-weight: 400; 
+        }
+
+        .p1_weight3 {
+            font-weight: 900; 
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    
+    <!-- <div>
+        <h1>글꼴 관련 스타일</h1>
+        <p class="p1">폰트 사이즈 미디움</p>
+        <p class="p2">폰트 사이즈 xx-스몰</p>
+        <p class="p3">폰트 사이즈 xx-라지</p>
+        
+    </div> -->
+
+
+
+    <div>
+
+        <!-- <h1>글꼴 관련 스타일</h1> -->
+        <p class="p1_weight1">폰트 100</p>
+        <p class="p1_weight2">폰트 400</p>
+        <p class="p1_weight3">폰트 900</p>
+
+    </div>
+
+
+
+
+
+
+
+    <br>
+
+    <div>
+
+        <h1>글꼴 관련 스타일</h1>
+        <p class="p1_px">폰트 사이즈 px</p>
+        <!-- px은 화면을 이루는 점 하나하나를 픽셀이라 부름 -->
+        <p class="p2_em">폰트 사이즈 em</p>
+        <!-- em은 부모 요소가 가지고 있는 배율 크기 -->
+        <p class="p3_rem">폰트 사이즈 rem</p>
+        <!-- 최상위 요소의 배율이다 -->
+        <!-- html이 최상위 요소 DIV도 html 자식이기 때문에 다같이
+        폰트 사이즈가 바뀜 -->
+
+        <!-- 현업에서 가장 많이 사용하는 3가지 사이즈 -->
+        
+
+        <!-- 매체의 다양한 변화 때문에 픽셀로 고정적인 값을 주기보다
+        em과 rem을 사용하여서 여러 환경에서도 글자를 잘 보이게 가능 -->
+            
+    </div>
+
+</body>
+</html>
