@@ -1,0 +1,7 @@
+.tokyo {
+    border-radius: 70%;
+    height: 300px;
+    width: 300px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 30px 2px #000;
+}

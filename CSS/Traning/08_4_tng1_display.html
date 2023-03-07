@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        div {
+            border: 3px solid orange;
+        }
+
+        span {
+            border: 3px solid black;
+        }
+
+        .art_2>div,
+        .art_2>span {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+        }
+
+        /* width height는 블럭 태그만 적용 가능
+        h, p, div 등등 */
+
+
+        .wh {
+            width: 150px;
+            height: 150px;
+        }
+
+
+
+
+    </style>
+
+
+</head>
+
+<body>
+    
+<article class="art_2">
+
+<div>div Tag1</div>
+<div>div Tag2</div>
+<div>div Tag3</div>
+<span>span1</span>
+<span>span2</span>
+<span>span3</span>
+
+<br><br>
+
+<div class="wh">테스트 div1</div>
+<span class="wh">테스트 wh1</span>
+
+</article>
+
+</body>
+
+</html>
