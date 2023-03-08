@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+
+.at_img {
+    background-image: url('../img/apple.jpg');
+    width: 150px;
+    height: 200px;
+    display: inline-block;
+    border: 1px solid black;
+    overflow: scroll;
+    background-size: 80%;
+    
+}
+
+
+.div_img_scroll {
+   
+    background-attachment: scroll;
+   
+}
+
+.div_img_local {
+   
+   background-attachment: local;
+  
+}
+
+
+.div_img_fixed {
+   
+   background-attachment: fixed;
+  
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+    <div style="height: 200px"></div>
+
+    <div class="div_img_scroll at_img">
+        asdasdaadssdaasddsaadsadsadadadsa
+        dadsadasdasdsadadasdadasdsadadasds
+        asdaddasdasdasdadsadasdasdasdasdas
+        asdasdaadssdaasddsaadsadsadadadsa
+        dadsadasdasdsadadasdadasdsadadasds
+        asdaddasdasdasdadsadasdasdasdasdas
+        asdasdaadssdaasddsaadsadsadadadsa
+        dadsadasdasdsadadasdadasdsadadasds
+        asdaddasdasdasdadsadasdasdasdasdas
+    </div>
+
+    <div class="div_img_fixed at_img">
+        asdasdaadssdaasddsaadsadsadadadsa
+        dadsadasdasdsadadasdadasdsadadasds
+        asdaddasdasdasdadsadasdasdasdasdas
+        asdasdaadssdaasddsaadsadsadadadsa
+        dadsadasdasdsadadasdadasdsadadasds
+        asdaddasdasdasdadsadasdasdasdasdas
+        asdasdaadssdaasddsaadsadsadadadsa
+        dadsadasdasdsadadasdadasdsadadasds
+        asdaddasdasdasdadsadasdasdasdasdas
+    </div>
+
+    <div class="div_img_local at_img">
+        asdasdaadssdaasddsaadsadsadadadsa
+        dadsadasdasdsadadasdadasdsadadasds
+        asdaddasdasdasdadsadasdasdasdasdas
+        asdasdaadssdaasddsaadsadsadadadsa
+        dadsadasdasdsadadasdadasdsadadasds
+        asdaddasdasdasdadsadasdasdasdasdas
+        asdasdaadssdaasddsaadsadsadadadsa
+        dadsadasdasdsadadasdadasdsadadasds
+        asdaddasdasdasdadsadasdasdasdasdas
+    </div>
+
+
+    <div style="height: 200px"></div>
+
+</body>
+</html>

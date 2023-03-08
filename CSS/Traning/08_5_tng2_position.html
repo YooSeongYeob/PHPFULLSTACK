@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+ <style>
+
+    #sec {
+        border: 1px solid black;
+        width: 700px;
+        height: 1000px;
+      
+    }
+
+
+    #st {
+        border: 1px solid black;
+        position: static;
+        /* 기본값 위치 스태틱 */
+        margin: 30px;
+        width: 300px;
+        height: 300px;
+        
+    }
+
+
+    #re_1 {
+        border: 1px solid black;
+        position: relative;
+        top: 0px;
+        left: 50px;
+        width: 300px;
+        height: 300px;
+    }
+
+    #re_2 {
+        border: 1px solid black;
+        position: relative;
+        /* 자기자신의 위치를 기준으로 자리를 잡는 게 렐러티브 */
+        top: -10px;
+        left: 100px;
+        width: 300px;
+        height: 300px;
+    }
+
+    #fix {
+        border: 1px solid black;
+        position: fixed;
+        /* 뷰포트 기준으로 위치 설정 */
+        width: 50px;
+        height: 50px;
+        bottom: 850px;
+        left: 657px;
+        background-color: black;
+    }
+
+    
+
+ </style>
+
+
+
+
+</head>
+
+
+
+<body>
+
+    
+    <section id="sec">
+
+
+        <div id="st">static</div>
+
+        <div id="re_1">relative1</div>
+
+        <div id="re_2">relative2</div>
+
+        <div id="fix">fixed</div>
+
+
+    </section>
+
+
+
+</body>
+</html>

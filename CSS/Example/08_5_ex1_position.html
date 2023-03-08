@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+
+    <style>
+
+        main, section, article {
+            padding: 20px;
+        }
+
+
+
+
+        main {
+            background-color: yellow;
+        }
+
+        section {
+            background-color: aqua;
+            /* position: relative; */
+        }
+
+        article {
+            background-color: orange;
+            height: 2000px;
+        }
+
+
+
+
+        .div_static {
+            background-color: blue;
+
+            
+        }
+        .div_relative {
+            background-color: red;
+            /* position: relative;
+            left: 30px; */
+        }
+        .div_absolute {
+            background-color: gray;
+            /* position: absolute;
+            top: 30px; */
+        /* 기준점이 릴레이티브랑 다르다 */
+        }
+        .div_fixed {
+            background-color: green;
+            /* position: fixed;
+            bottom: 500px;
+            right: 5px; */
+
+            /* bottom: 10%;
+            right: 10%; 로도 가능 */
+
+            /* 스크롤 내려도 아이콘을 고정해주는 역할
+            광고 배너를 픽스드로 고정 */
+
+            /* 뷰 포트를 기준으로 움직인다
+            실제로 브라우저에 보이고 있는 영역을 뷰 포트라고 한다 */
+        }
+        .div_sticky {
+            background-color: blueviolet;
+           position: sticky;
+           top: 0;
+        }
+   
+    </style>
+
+</head>
+<body>
+    <main>
+        main
+        <section>
+            section
+            <article>
+                article
+                <div class="div_static">static</div> 
+                <!-- static은 기본 배치 값 -->
+                <div class="div_relative">relative</div>
+                <!-- 방향을 적용하면 반대 방향으로 띄어짐 
+                right나 left가 기준이 되고 얼마만큼 움직이는 것
+                - 적용하면 반대로 간다-->
+                <div class="div_absolute">absolute</div>
+                <!--  -->
+                <div class="div_fixed">fixed</div>
+                <!--  -->
+                <div class="div_sticky">sticky</div>
+                <!--  -->
+            </article>
+        </section>
+    </main>
+
+    <!-- 렐러티브는 자기 기준이고
+    앱솔루트는 부모요소에게 의존함 스태틱이 아닌 요소에게 의존 -->
+</body>
+</html>
