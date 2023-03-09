@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            width: 700px;
+            height: 700px;
+            position: relative;
+        }
+
+
+
+        input:focus{
+            border: 3px solid #2727cccc;
+            outline: none;
+            
+        }
+
+        legend {
+            font-size: 59px;
+            color: #d41c1cd5;
+            font-weight: 900;
+            font-style: italic;
+        }
+
+        .main {
+            background-image: url(../img/yellowFerrari.png);
+            background-size: 1000px;
+            width: 1000px ;
+            height: 500px ;
+            list-style: none;
+            
+        }
+
+    
+
+    
+      textarea:focus{
+        border: 3px solid #2727cccc;
+            outline: none;
+           
+              }
+
+      textarea {
+      
+        border: 1px dotted;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 265px;
+        right:300px;
+        background-color: transparent;
+        
+        
+      }
+      .require {
+        font-weight: 900;
+        position: absolute;
+        top:250px;
+        color: rgba(0, 0, 0, 0.829);
+        float: left;
+        padding: 10px;
+      }
+
+      ul {
+        list-style:none;
+      }
+
+      .star::before {
+        content: '*';
+        color: red;
+      }
+
+    #man:focus + .cucu  {
+        color:red;
+      }
+      
+    #girl:focus + .dudu  {
+        color:red;
+      }
+
+      span {
+        display: none;
+        background-color: black;
+        color: white;
+        padding 3px;
+
+      }
+
+      #send:hover + span {
+        display: inline-block;
+      }
+    </style>
+</head>
+<body>
+    <form>
+    <fieldset>
+        
+        <legend>I want YOU!</legend>
+        
+        <div class="main">
+            <ul>
+                <li>
+                    <label class="star" for="id">이름</label>
+                    <input type="text" id="id" required>
+                </li>
+                <br>
+                <li>
+                   <label class="star" for="id_2">나이</label>
+                   <input type="number" id="id_2" min="20" required>
+                </li>
+                <br>
+                <li>
+                    <div class="star">성별
+
+                    <input type="radio" name="sex" id="man" required>
+                    <label for="man" class="cucu">남자</label>
+
+                    <input type="radio" name="sex" id="girl" required>
+                    <label for="girl" class="dudu">여자</label>
+                </div>
+                </li>
+            </ul>
+            
+            
+        <div>
+            <label for="memo" class="require">요청사항</label>
+            <textarea cols="40" rows="4" id="memo" placeholder="요청 사항 입력"></textarea>
+        </div>
+
+            <br>
+          
+            
+        </div>
+
+        <button type="submit" id="send">보내기</button>
+        <span >내용을 다시 한 번 확인해주세요</span>
+    </fieldset>
+</form>
+</body>
+
+    
+
+</body>
+</html>
