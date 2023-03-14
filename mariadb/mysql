@@ -259,3 +259,58 @@ WHERE emp_no IN (
 					);
 현재 직책이 시니어 엔지니어인
 사원의 사원번호와 성을 조회해주세요.
+
+
+
+
+INSERT INTO employees(
+ emp_no
+,birth_date
+,first_name
+,last_name
+,hire_date					
+)
+VALUES
+(
+	50000
+	,NOW()
+	,'SeongYeob'
+	,'YOO'
+	,'M'
+	,NOW()
+	);
+	
+	
+	(
+	 emp_no
+,birth_date
+,first_name
+,last_name
+,hire_date	
+)
+
+INSERT INTO employees(
+ emp_no
+,birth_date
+,first_name
+,last_name
+,gender
+,hire_date					
+)
+VALUES
+(
+	50001
+	,NOW()
+	,'SeongYeob'
+	,'YOO'
+	,'M'
+	,NOW()
+	);
+	
+	
+	SELECT *
+	FROM employees
+	WHERE emp_no = 500000;
+
+
+    SELECT @@autocommit;
