@@ -315,7 +315,334 @@ VALUES
 
     SELECT @@autocommit;
 
+2023-03-15 update
+
+update departments
+set dept_name= '1000'
+where dept_no= 'd001' or dept_no = 'd002';
 
 
+and는 둘 다 조건이 만족해야 함
+
+
+	update employees 
+	set first_name = '신'
+	, last_name  = '유진'
+	, birth_date = date(19940424)
+	where emp_no = 500000;
+
+
+	select *
+	from departments 
+	order by dept_no;
+
+
+밑에 께 완성본
+
+	INSERT INTO employees(
+ emp_no
+,birth_date
+,first_name
+,last_name
+,hire_date
+)
+VALUES
+(
+	500000
+	,NOW()
+	,'SeongYeob'
+	,'YOO'
+	,NOW()
+	);
+	
+	SELECT *
+	FROM employees
+	WHERE emp_no = 500000;
+	
+	update employees 
+	set first_name = '유'
+	, last_name  = '성엽'
+	, birth_date = date(19940424)
+	where emp_no = 500000;
+
+이게 완성본
+
+데이터 삭제는 
+DELETE FROM employees
+WHERE emp_no = 500000;
+
+이것이다.
+
+셀렉트 업데이트 딜리트 인서트를 2023.03.15까지 배웠다.
+
+2023.03.15 단체 과제
+1사원정보 테이블에 각자의 정보를 적절하게 기입해주세요.
+2월급, 직책, 소속부서를 테이블에 각자의 정보를 적절하게 기입해주세요.
+3짝궁 [1,2] 것도 기입해주세요.
+4나의 짝궁의 소속 부서를 d009로 변경해주세요.
+5짝궁의 모든 정보를 삭제해주세요
+6'd009'부서의 관리자를 나로 변경해주세요
+7오늘 날짜부로 나의 직책을 'senior engineer'로 변경해주세요.
+8최고 연봉 사원과 최저 연봉 사원의 사번과 이름을 출력해주세요
+9전체 사원의 평균 연봉을 출력해주세요.
+10. 사번이 499,975인 사원의 지금까지의 평균 연봉을 출력해주세요.
+
+INSERT INTO employees (
+	emp_no
+	,birth_date
+	,first_name
+	,last_name
+	,gender
+	,hire_date
+	)
+	
+	VALUE (
+	1020304050
+	,NOW()
+	,'SeongYeob'
+	,'Yoo'
+	,'m'
+	,NOW()
+	);
+	
+	
+	SELECT *
+	FROM employees
+	WHERE emp_no = 1020304050;
+
+UPDATE employees
+SET first_name = '성엽'
+  	 ,last_name = '유'
+  	 ,birth_date = DATE(19940424)
+  	 ,gender= 'm'
+WHERE emp_no = 1020304050 ;
+
+
+INSERT INTO salaries (
+	emp_no
+	,salary
+	,from_date
+	,to_date			
+)
+
+VALUE (
+	1020304050
+	,77555
+	,NOW()
+	,NOW()
+);
+
+
+INSERT INTO titles (
+	emp_no
+	,title
+	,from_date
+	,to_date			
+)
+
+VALUE (
+	1020304050
+	,'engineer'
+	,DATE(20230301)
+	,NOW()
+);
+
+INSERT INTO dept_emp (
+	emp_no
+	,dept_no
+	,from_date
+	,to_date			
+)
+
+VALUE (
+	1020304050
+	,'d002'
+	,DATE(20230301)
+	,NOW()
+);
+
+
+INSERT INTO employees (
+	emp_no
+	,birth_date
+	,first_name
+	,last_name
+	,gender
+	,hire_date
+	)
+	
+	VALUE (
+	500000
+	,DATE(19970518)
+	,'창현'
+	,'배'
+	,'m'
+	,NOW()
+	);
+	
+	
+	SELECT *
+	FROM employees
+	WHERE emp_no = 500000;
+	
+	
 
 	
+	INSERT INTO dept_emp (
+	emp_no
+	,dept_no
+	,from_date
+	,to_date			
+)
+
+VALUE (
+	500000
+	,'d001'
+	,DATE(19970518)
+	,NOW()
+);
+
+
+INSERT INTO titles (
+	emp_no
+	,title
+	,from_date
+	,to_date			
+)
+
+VALUE (
+	500000
+	,'engineer'
+	,DATE(19970518)
+	,NOW()
+);
+
+
+INSERT INTO salaries (
+	emp_no
+	,salary
+	,from_date
+	,to_date			
+)
+
+VALUE (
+	500000
+	,77777777
+	,DATE(19970518)
+	,NOW()
+);
+
+
+UPDATE dept_emp
+SET dept_no = 'd009'
+WHERE emp_no = 1020304050 OR emp_no= 500000;
+
+
+DELETE 
+FROM employees 
+WHERE emp_no = 500000;
+
+
+UPDATE departments
+SET dept_name= '유성엽'
+WHERE dept_no ='d009';
+
+
+UPDATE titles 
+SET title = 'senior engineer', FROM_date = NOW()
+WHERE emp_no = 1020304050
+;
+
+
+
+SELECT emp_no, first_name CONCAT(MAX, MIN)
+FROM employees
+WHERE emp_no  IN (
+             			SELECT emp_no 
+							FROM salaries
+             			WHERE salary
+             			GROUP BY salary
+             			HAVING salary
+						
+						 );
+						 
+				
+				
+				
+				
+				
+				
+SELECT emp_no, first_name 
+FROM employees 
+WHERE emp_no 
+            	= (
+						SELECT emp_no
+						FROM salaries
+						order BY MAX='salary' AND MIN='salary' 
+						);							
+				
+
+
+				
+
+SELECT *
+FROM employees
+WHERE emp_no = (
+					SELECT emp_no
+					FROM salaries
+					WHERE salary					
+					ORDER BY salary desc LIMIT 1
+					);
+					
+				
+SELECT *
+FROM employees
+WHERE emp_no = (
+					SELECT emp_no
+					FROM salaries
+					WHERE salary					
+					ORDER BY salary asc LIMIT 1
+					);
+
+
+
+SELECT AVG(salary)
+FROM salaries;
+
+						 
+						 
+SELECT emp_no
+,AVG (salary)
+FROM salaries
+WHERE emp_no = 499975;
+
+
+SELECT emp_no, first_name, last_name
+FROM employees
+WHERE emp_no IN (
+						SELECT emp_no
+						FROM salaries 
+						WHERE salary = (SELECT MAX(salary)FROM salaries)
+							or salary = (SELECT MIN(salary)FROM salaries)
+						
+						
+					);
+
+
+
+				또는	WHERE salary IN (
+					(SELECT MAX(salary) FROM salaries),
+					(SELECT MIN(salary) FROM salaries)
+					)
+
+
+			오더 바이 쿼리 형식
+
+
+SELECT emp_no, first_name 
+FROM employees
+WHERE emp_no =
+(SELECT emp_no FROM salaries ORDER BY salary LIMIT 1)
+OR 
+emp_no =
+(SELECT emp_no FROM salaries ORDER BY salary DESC LIMIT 1) ;
