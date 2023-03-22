@@ -1,0 +1,89 @@
+CREATE TABLE TEST_TBL (
+	MEM_NO INT(5)
+	,MEM_NAME VARCHAR(50) NOT NULL
+	,MEM_AGE INT(3) NOT NULL
+	,MEM_SEX ENUM('F','M')
+	,MEM_SIGNIN_DATE DATETIME NOT NULL
+	,MEMSIGNOUT_DATE DATETIME 
+	,CONSTRAINT PK_EMPLOYEES_MEM_NO PRIMARY KEY(MEM_NO)	
+);
+
+ALTER TABLE test_tbl ADD COLUMN ADDR1 VARCHAR(300);
+
+SHOW FULL COLUMNS FROM test_tbl;
+
+ALTER TABLE test_tbl DROP COLUMN ADDR1;
+
+SHOW FULL COLUMNS FROM test_tbl;
+
+ALTER TABLE test_tbl ALTER COLUMN ADDR1 VARCHAR(200);
+
+
+INSERT INTO test_tbl (
+	MEM_NO 
+	,MEM_NAME 
+	,MEM_AGE 
+	,MEM_SEX 
+	,MEM_SIGNIN_DATE 
+	,MEMSIGNOUT_DATE 
+)
+VALUES (
+	4
+	,'유성엽'
+	, 30
+	,'m'
+	,NOW() 
+	,NULL	
+	);
+
+SELECT * FROM test_tbl;
+
+ROLLBACK;
+
+DELETE FROM test_tbl WHERE mem_no = 1;
+-- dml
+TRUNCATE test_tbl;
+-- ddl 권한이 트런케이트가 더 높다 문제가 없다는 듯이 오류가 안 떠서 조심해야 함
+
+DROP TABLE test_tbl;
+-- 테이블 영구 삭제 인서트나 셀렉트 할 때 오류 나옴
+
+
+CREATE TABLE TEST_EMP (
+	EMP_NO INT(11)
+	,birth_date date NOT NULL
+	,first_name VARCHAR(14) NOT NULL
+	,last_name VARCHAR(16) NOT NULL
+	,gender ENUM('M','F')
+	,hire_date DATE  
+	,CONSTRAINT PK_EMPLOYEES_EMP_NO PRIMARY KEY(EMP_NO)	
+);
+
+
+CREATE TABLE TEST_title (
+	EMP_NO INT(11) NOT null
+	,title VARCHAR(5) NOT null
+	,from_date DATE NOT null
+	,to_date DATE NOT null
+	,CONSTRAINT PK_EMPLOYEES_EMP_NO PRIMARY KEY(EMP_NO)	
+);
+
+
+CREATE TABLE TEST_salary (
+	
+);
+
+ALTER TABLE test_title 
+ADD CONSTRAINT fk_test_emp_emp_no FOREIGN KEY (emp_no)
+REFERENCES test_emp (emp_no);
+
+
+
+ALTER TABLE test_salaray
+ADD CONSTRAINT fk_test_emp_no FOREIGN KEY (emp_no)
+REFERENCES test_emp(emp_no);
+
+
+CREATE INDEX emp_no ON test_emp (hire_date);
+
+
