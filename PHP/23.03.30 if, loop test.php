@@ -77,9 +77,6 @@
 
 
 $num=0;
-if(0)
-{
-    echo "1";
-}
+echo $num;
 
 ?>
