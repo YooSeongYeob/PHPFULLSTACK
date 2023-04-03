@@ -60,4 +60,44 @@ if (!$flg_cnt)
     echo "데이터가 0건 입니다.";
 }
 
+// DB 연결
+$dbc = mysqli_connect("localhost", "root", "root506", "employees", 3306);
+//var_dump($dbc);
+
+// 쿼리 요청
+// $result_query = mysqli_query
+
+$i = 5;
+$result = null;
+// Prepared Statement :
+$stmt = $dbc -> stmt_init(); // statement를 세팅
+$stmt -> prepare ("SELECT emp_no, first_name FROM employees Limit ?");
+$stmt -> bind_param("i", $i); // prepare 세팅
+$stmt -> execute(); // DB에 쿼리 질의 실행
+$stmt -> bind_result( $col1 ,$col2 ); // 질의 결과를 각 아규먼트($col, $col2)에 저장하기 위한 세팅
+// $stmt -> fetch(); // bind_result에서 세팅한 아규먼트에 값을 저장(한 번 실행될 때마다 한 레코드씩 저장)
+// var_dump( $col1, $col2 );
+
+// ------- 이하 연상배열로 가져오는 방법 ------
+$result = $stmt -> get_result(); // 질의 결과를 저장
+
+//패치를 루프로 돌려서 모든 질의 결과를 가져오는 방법
+//----질의 결과를 
+while($row = $result -> fetch_assoc())
+{
+    var_dump($row);
+    // echo $row["first_name"], "\n";
+}
+
+
+
+// while ($stmt->fetch());
+// {
+    // echo "$col1 $col2 \n";
+// }
+
+
+
+// DB 연결 종료
+
 ?>
