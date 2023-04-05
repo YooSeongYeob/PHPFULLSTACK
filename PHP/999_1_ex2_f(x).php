@@ -81,32 +81,15 @@
 //****
 //*****
 // 함수를 하나 만들고, 호출하여 별 찍기
-$num = 1;
-for($i=0; $i<$num; $i++)
-{
-    for($j = $num - $i; $j >0; $j--)
-    {
-        echo " ";
-    }
-}
-for($q=0; $q < 2*$i-1; $q++)
-{
-    echo "*";
-}
-echo "<br /> \n";
 
-$num = 1;
-for($i=0; $i<$num; $i++)
+function fnc_static()
 {
-    for($j = $num - $i; $j >0; $j--)
-    {
-        echo " ";
-    }
+    static $static_i = "*";
+    echo $static_i;
+    $static_i++;
 }
-for($q=0; $q < 2*$i-1; $q++)
-{
-    echo "*";
-}
-echo "<br /> \n";
+
+fnc_static()."\n \n";
+
 
 ?>
