@@ -1,6 +1,7 @@
 <?php
     // CLASS : 동종의 객체들이 모여있는 집합
-
+    // 객체 지향 개념이 나오면서 사용하게 됨
+    
     // class student
     // {
         // 접근제어 지시자 : public, private, protected

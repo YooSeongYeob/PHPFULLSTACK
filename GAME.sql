@@ -1,29 +1,29 @@
 ﻿CREATE TABLE `game_type` (
-	`g_number`	VARCHAR(15)	NOT NULL,
-	`mmorpg`	VARCHAR(25)	NOT NULL,
-	`sports`	VARCHAR(20)	NOT NULL,
-	`fps`	VARCHAR(20)	NOT NULL,
-	`moba`	VARCHAR(30)	NULL,
-	`rts`	VARCHAR(20)	NOT NULL
+	`game_no`	INT	NOT NULL,
+	`game_genre`	VARCHAR(25)	NOT NULL,
+	`game_open`	date	NOT NULL,
+	`game_close`	date	NOT NULL,
+	`game_flatform`	CHAR(1)	NULL,
+	`game_name`	VARCHAR(100)	NULL
 );
 
 CREATE TABLE `game_rank` (
-	`g_number`	VARCHAR(15)	NOT NULL,
-	`game_rank`	VARCHAR(150)	NOT NULL
+	`game_no`	INT	NOT NULL,
+	`game_rank_no`	INT	NOT NULL
 );
 
 ALTER TABLE `game_type` ADD CONSTRAINT `PK_GAME_TYPE` PRIMARY KEY (
-	`g_number`
+	`game_no`
 );
 
 ALTER TABLE `game_rank` ADD CONSTRAINT `PK_GAME_RANK` PRIMARY KEY (
-	`g_number`
+	`game_no`
 );
 
 ALTER TABLE `game_rank` ADD CONSTRAINT `FK_game_type_TO_game_rank_1` FOREIGN KEY (
-	`g_number`
+	`game_no`
 )
 REFERENCES `game_type` (
-	`g_number`
+	`game_no`
 );
 
