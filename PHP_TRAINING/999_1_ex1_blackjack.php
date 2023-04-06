@@ -11,66 +11,61 @@
 // 4-2. K·Q·J,10은 10점
 // 4-3. A는 1점 또는 11점 둘 중의 하나로 계산
 //5. 카드의 합이 같으면 다음의 규칙에 따름
-// 5-1. 카드 수가 적은 쪽이 승리
-// 5-2. 카드 수가 같을 경우 비긴다
+// 5-1. 카드수가 적은 쪽이 승리
+// 5-2. 카드수가 같을경우 비긴다
 //6. 유저가 카드를 받을 때 딜러는 아래의 규칙을 따른다.
 // 6-1. 딜러는 카드의 합이 17보다 낮을 경우 카드를 더 받음
 // 6-2. 17 이상일 경우는 받지 않는다.
 //7. 1입력 : 카드 더받기, 2입력 : 카드비교, 0입력 : 게임종료
-//8. 한 번 사용한 카드는 다시 쓸 수 없다.
+//8. 한번 사용한 카드는 다시 쓸 수 없다.
 
-// while(true) {
-// 	echo '시작';
-// 	print "\n";
-// 	fscanf(STDIN, "%d\n", $input);        
-// 	if($input === 0) {
-// 		break;
-// 	}
-// 	echo $input;
-// 	print "\n";
-// }
-// echo "끝!\n";
+class BlackJack
+{
+	private $arr_num;
+	private $arr_shape;
+	private $arr_deck;
 
-// class Blackjack
-// {
-// 	private $deck;
-// 	private $player_hand;
-// 	private $dealer_hand;
+	// construct
+	public function __construct()
+	{
+		$this->arr_num = array( "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K");
+		$this->arr_shape = array("♠", "♣", "◆", "♥");
+		$this->set_deck();
+	}
+
+	// set
+	private function set_deck()
+	{
+		// 카드 52장 덱에 셋팅
+		foreach( $this->arr_shape as $shape )
+		{
+			foreach( $this->arr_num as $num )
+			{
+				$this->arr_deck[] = $num.$shape;
+			}
+		}
+		// 덱 셔플
+		shuffle( $this->arr_deck );
+	}
+
+	// TODO : debug
+	public function debug()
+	{
+		var_dump( $this->arr_deck );
+	}
+}
+$obj_bj = new BlackJack();
+$obj_bj->debug();
 
 
-// public function __construct()
-// 	{
-// 	$this->deck = array();
-// 	$suits = array('Spades','Hearts','Clubs','Diamonds');
-// 	$values = array('2','3','4','5','6','7','8',"9","10");
-// 	foreach($suits as $suit) 
-// 		{
-// 			foreach($values as $value)
-// 			{
-// 			array_push($this->deck, "$value of $suit");
-// 			}
-// 		}	
-// 	}
-
-	
-// 	public function shuffle_deck() 
-// 	{
-// 	shuffle($this->deck);
-// 	}
-// 	public function deal_hands(); 
-// 	{
-// 	$this->player_hand = array();
-// 	$this->dealer_hand = array();
-// 	array_push($this->player_hand, array_pop($this->deck));
-// 	array_push($this->dealyer_hand, array_pop($this->deck));
-// 	array_push($this->player_hand, array_pop($this->deck));
-// 	array_push($this->dealer_hand, array_pop($this->deck));
-// 	}
-
-// 	public function player_turn()
-// 	{
-// 		while
-// 	}
-
-// }
-
+//while(true) {
+//	echo '시작';
+//	print "\n";
+//	fscanf(STDIN, "%d\n", $input);        
+//	if($input === 0) {
+//		break;
+//	}
+//	echo $input;
+//	print "\n";
+//}
+//echo "끝!\n";
