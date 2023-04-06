@@ -32,7 +32,7 @@ class BlackJack
 		$this->arr_shape = array("♠", "♣", "◆", "♥");
 		$this->set_deck();
 	}
-
+	
 	// set
 	private function set_deck()
 	{
