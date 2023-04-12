@@ -1,7 +1,7 @@
 <?php
 // http://localhost/mini_board/src/board_update.php?board_no=1
 //  여기까지 도메인//  여기까지 패스라고 부름      //
-// board_no=1은 쿼리스트리밍이라고 함
+// board_no=1은 쿼리 스트링이라고 함
 
 // 1. Get Method로 데이터를 넘겨주는 방법 1
 //     -Query String에 키와값을 세팅해준다. 
