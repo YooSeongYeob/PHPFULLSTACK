@@ -5,7 +5,13 @@
 //---------------------------
 
 // 숫자 타입 (number) 자바스크립트는 number, PHP는 int
-let num = 1;
+let num = 1; // 전역 스코프 넘버
+function test() {
+    let num = 2;
+    console.loh("함수 : " + num);
+}
+console.log("전역 : " + num);
+
 // 문자열 (string)
 let str = "안녕";
 // 불리언 (boolean 참 거짓 할 때 그 boolean)
@@ -69,10 +75,12 @@ let arr = [ " 탕수육 ", "짜장면", "짬뽕" ]; // arr[방 번호];
 
 
 
-
-
 // DATE
 
 // OBject
 
-// 함수도 포함됨
+// 함수
+
+// 제어문
+
+// 연산자
