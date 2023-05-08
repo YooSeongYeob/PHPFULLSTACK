@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+        }
+        canvas {
+            border: 3px solid black;
+        }
+    </style>
+    <title>sign</title>
+</head>
+<body>
+    <div id="div1">
+        <canvas id="canvas1"></canvas>
+    </div>
+    <br>
+    <br>
+    <button id="btn1">저장</button>
+ 
+ <script>
+        const div1 = document.getElementById('.div1');
+        const can1 = document.getElementById('.can1');
+        const txt = can1.getContext("2d");
+        const btn1 = document.getElementById('btn1');
+        let drawble = false;
+
+  // pc에서 서명
+        (function () {
+  var canvas = document.querySelector("#canvas");
+  var div = canvas.parentElement;
+  var ctx = canvas.getContext("2d");
+  var drawable = false;
+
+  function canvasResize() {
+    canvas.height = div.offsetHeight;
+    canvas.width = div.offsetWidth;
+  }
+
+  function draw(e) {
+    function getPosition() {
+      return {
+        X: e.pageX - canvas.offsetLeft,
+        Y: e.pageY - canvas.offsetTop,
+      };
+    }
+    switch (e.type) {
+      case "mousedown":
+        {
+          drawable = true;
+          ctx.beginPath();
+          ctx.moveTo(getPosition().X, getPosition().Y);
+        }
+        break;
+      case "mousemove":
+        {
+          if (drawable) {
+            ctx.lineTo(getPosition().X, getPosition().Y);
+            ctx.stroke();
+          }
+        }
+        break;
+      case "mouseup":
+      case "mouseout":
+        {
+          drawable = false;
+          ctx.closePath();
+        }
+        break;
+    }
+  }
+
+  function touchdraw(e) {
+    function getPosition() {
+      return {
+        X: e.changedTouches[0].pageX - canvas.offsetLeft,
+        Y: e.changedTouches[0].pageY - canvas.offsetTop,
+      };
+    }
+    switch (e.type) {
+      case "touchstart":
+        {
+          drawable = true;
+          ctx.beginPath();
+          ctx.moveTo(getPosition().X, getPosition().Y);
+        }
+        break;
+      case "touchmove":
+        {
+          if (drawable) {
+            e.preventDefault();
+            ctx.lineTo(getPosition().X, getPosition().Y);
+            ctx.stroke();
+          }
+        }
+        break;
+      case "touchend":
+      case "touchcancel":
+        {
+          drawable = false;
+          ctx.closePath();
+        }
+        break;
+    }
+  }
+
+  return {
+    init: function () {
+      window.addEventListener("resize", canvasResize);
+
+      canvas.addEventListener("mousedown", draw);
+      canvas.addEventListener("mousemove", draw);
+      canvas.addEventListener("mouseup", draw);
+      canvas.addEventListener("mouseout", draw);
+
+      canvas.addEventListener("touchstart", touchdraw);
+      canvas.addEventListener("touchend", touchdraw);
+      canvas.addEventListener("touchcancel", touchdraw);
+      canvas.addEventListener("touchmove", touchdraw);
+
+      document.querySelector("#save").addEventListener("click", function () {
+        var link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "image.png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    },
+    onLoad: function () {
+      canvasResize();
+    },
+  };
+})().init();
+    </script>
+</body>
+</html>
