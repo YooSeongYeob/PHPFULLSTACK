@@ -1,0 +1,38 @@
+#apiContainer {
+    margin-bottom: 20px;
+  }
+
+  #apiUrlInput {
+    width: 300px;
+    padding: 5px;
+    margin-right: 10px;
+    border-style: outset;
+  }
+
+  #apiButton {
+    padding: 5px 10px;
+    background-color: #b3978f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-style:ridge;
+  }
+
+  #imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .imageItem {
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    overflow: hidden;
+  }
+
+  .imageItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
