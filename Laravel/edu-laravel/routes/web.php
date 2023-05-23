@@ -224,3 +224,24 @@ Route::get('makesign', function() {
         return 'Sign!!';
     }) ->name('sign')->middleware('signed');
 
+
+//--------------------
+// 컨트롤러
+//--------------------
+// 커맨드로 컨트롤러랑 모델을 만들어서 의존성을 높인다
+// 커맨드로 컨트롤러 생성 - PHP artisan make:controller TestController
+// 컨트롤러 쓸 때는 use 사용해줘야 함
+use App\Http\Controllers\TestController; // 얘까지 적용해야 컨트롤러가 호출이 됨
+Route::get('/test', [TestController::class,'index'])->name('tests.index');
+
+
+// 커맨드로 컨트롤러 생성 - php artisan make:controller TasksController --resource
+// 리소스 안 쓰면 빈 컨트롤러임
+use App\Http\Controllers\TasksController;
+Route::resource('/tasks', TasksController::class); // 네임 설정해주고 겟 포스트 딜리트 풋 신경 안 써도 다 해결해줌 의존성을 해결해주는 프레임워크
+
+
+
+use App\Http\Controllers\BladeController;
+Route::get('blade', [BladeController::class,'index'])->name('blade.index');
+
