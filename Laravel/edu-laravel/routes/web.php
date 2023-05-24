@@ -245,3 +245,4 @@ Route::resource('/tasks', TasksController::class); // 네임 설정해주고 겟
 use App\Http\Controllers\BladeController;
 Route::get('blade', [BladeController::class,'index'])->name('blade.index');
 
+
