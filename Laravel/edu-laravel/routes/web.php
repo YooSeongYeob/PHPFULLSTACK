@@ -243,6 +243,8 @@ Route::resource('/tasks', TasksController::class); // 네임 설정해주고 겟
 
 
 use App\Http\Controllers\BladeController;
-Route::get('blade', [BladeController::class,'index'])->name('blade.index');
+Route::get('/blade', [BladeController::class,'index'])->name('blade.index');
 
+use App\Http\Controllers\BoardController;
+Route::resource('/board',BoardController::class); // 공통으로 작업하게 될 파일이라고 함
 

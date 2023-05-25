@@ -37,7 +37,6 @@ class CategorySeeder extends Seeder
 }
 
 // USE edu_laravel;
-
 // CREATE TABLE categories (
 // 	id BIGINT PRIMARY KEY AUTO_INCREMENT
 // 	,NO CHAR(1) NOT NULL UNIQUE
